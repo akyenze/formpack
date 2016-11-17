@@ -62,7 +62,7 @@ def expand_content_in_place(content):
     _metas = []
 
     for row in survey_content:
-        if 'name' in row and row['name'] == None:
+        if 'name' in row and row['name'] is None:
             del row['name']
         if 'type' in row:
             _type = row['type']
@@ -153,6 +153,8 @@ def _get_special_survey_cols(content):
             _mark_special(column_name=column_name,
                           column=column_name,
                           translation=UNTRANSLATED)
+        if not column_name:
+            continue
         if ':' not in column_name:
             continue
         if column_name.startswith('bind:'):
