@@ -78,7 +78,6 @@ selects = aliases_to_ordered_dict({
     u'select_one': [
         u'select one',
         u'select one from',
-        u'select one from file',
         u'add select one prompt using',
         u'select1',
     ],

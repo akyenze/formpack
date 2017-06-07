@@ -215,7 +215,9 @@ def _expand_type_to_dict(type_str):
         return out
     for _re in [
                 '^(select_one)\s+(\S+)$',
+                '^(select_one_from_file)\s+(\S+)$',
                 '^(select_multiple)\s+(\S+)$',
+                '^(select_multiple_from_file)\s+(\S+)$',
                 '^(select_one_external)\s+(\S+)$',
                ]:
         match = re.match(_re, type_str)

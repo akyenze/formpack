@@ -16,9 +16,12 @@ DATA_TYPE_ALIASES = (
     ("select one from", 'select_one'),
     ("select1", 'select_one'),
     ("select one", 'select_one'),
+    ("select one from file", 'select_one'),#added for bdm'
+    ("select_one_from_file", 'select_one'),#added for bdm
     ("add select multiple prompt using", 'select_multiple'),
     ("select all that apply from", 'select_multiple'),
     ("select multiple", 'select_multiple'),
+    ("select_multiple_from_file", 'select_multiple'),#added for bdm
     ("select all that apply", 'select_multiple'),
     ("select_one_external", "select one external"),
     ('cascading select', 'cascading_select'),
@@ -32,7 +35,6 @@ DATA_TYPE_ALIASES = (
     ("begin looped group", 'begin_repeat'),
     ("end looped group", 'end_repeat'),
 )
-
 
 def formversion_pyxform(data):
     content = flatten_content(data)

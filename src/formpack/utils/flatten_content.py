@@ -64,7 +64,7 @@ def _stringify_type__depr(json_qtype):
     {'select_one': 'xyz'} -> 'select_one xyz'
     {'select_multiple': 'xyz'} -> 'select_mutliple xyz'
     '''
-    _type_keys = ['select_one', 'select_multiple']
+    _type_keys = ['select_one', 'select_multiple', 'select_one_from_file','select_multiple_from_file']
     if len(json_qtype.keys()) != 1:
         raise ValueError('Type object must have exactly one key: %s' %
                          ', '.join(_type_keys))
@@ -168,6 +168,8 @@ def _flatten_survey_row(row):
             _list_name = row.pop('select_from_list_name')
             if row['type'] == 'select_one_or_other':
                 row['type'] = 'select_one {} or_other'.format(_list_name)
+            #elif row['type'] == 'select_one_from_file':
+              # row['type'] = 'select_one_from_file'.format(_list_name)
             elif row['type'] == 'select_multiple_or_other':
                 row['type'] = 'select_multiple {} or_other'.format(_list_name)
             elif row.get(OR_OTHER_COLUMN):

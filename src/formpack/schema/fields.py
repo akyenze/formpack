@@ -141,11 +141,10 @@ class FormField(FormDataDef):
 
         if ' ' in data_type:
             raise ValueError('invalid data_type: %s' % data_type)
-
         if data_type in ('select_one', 'select_multiple'):
             choice_id = definition['select_from_list_name']
             choice = field_choices[choice_id]
-
+			
         data_type_classes = {
             "select_one": FormChoiceField,
             "select_multiple": FormChoiceFieldWithMultipleSelect,

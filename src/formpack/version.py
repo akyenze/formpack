@@ -260,7 +260,6 @@ class FormVersion(object):
             the group label is retrieved, possibly translated, and
             prepended to the field label itself.
         """
-
         all_labels = OrderedDict()
         for section_name, section in self.sections.items():
 
